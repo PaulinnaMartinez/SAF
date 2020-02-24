@@ -1,0 +1,23 @@
+﻿@model SAF.Models.Grupo
+
+@{
+    ViewBag.Title = "temas";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+        foreach (var item in Model.listTema)
+        {
+        <label>
+            <input type="checkbox"
+                   name="cbTema[]"
+                   value="@item.idTema" /> @item.nombre
+            </label>
+            }
+        }
+      
+

@@ -1,0 +1,54 @@
+﻿@model SAF.Models.Detalles
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Maestro
+        </dt>
+
+        <dd>
+            @if (Model.modo.Equals("A"))
+            {
+                <p>Maestro titulado</p>
+            }
+            else
+            {
+                <p>Maestro no titulado</p>
+            }
+
+            
+        </dd>
+
+        <dt>
+            Descripcion de clase
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            Temas
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.nombre)
+            {
+                @item
+                <br />
+            }
+        </dd>
+
+
+
+    </dl>
+</div>
+

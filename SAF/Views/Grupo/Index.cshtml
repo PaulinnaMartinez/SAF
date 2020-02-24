@@ -1,0 +1,120 @@
+﻿@model IEnumerable<SAF.Models.Grupo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+<h2>Mis grupos</h2>
+
+<p>
+    @if (Session["modo"].ToString().Equals("M"))
+    {
+       
+        @Html.ActionLink("Nuevo grupo", "Create", null, new { @class = "btn btn-outline-info", 
+       @style = "width: 150px; height: 40px; position: absolute; top: 63px; right:80px;"})
+    }
+</p>
+
+
+
+
+
+@Html.Raw(TempData["msg"])
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idGrupo)
+        </th>
+        <th>
+            
+            materia
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.facultad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costo)
+        </th>
+        @if (Session["modo"].ToString().Equals("A"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.maestro)
+            </th>
+        }
+        @if (Session["modo"].ToString().Equals("M"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.activo)
+            </th>
+        }
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idGrupo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clase.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.facultad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costo)
+            </td>
+            @if (Session["modo"].ToString().Equals("A"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.maestro)
+                </td>
+            }
+            @if (Session["modo"].ToString().Equals("M"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.activo)
+                </td>
+            }
+            <td>
+
+                @if (Session["modo"].ToString().Equals("M"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.idGrupo })
+                }
+                else
+                {
+                    @Html.ActionLink("Details", "Details", new { idG = item.idGrupo, idC = item.clase.idClase, mat = item.usuario.matricula })
+                    
+                }
+               
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,32 @@
+﻿@model SAF.Models.Tema
+
+@{
+    ViewBag.Title = "temas";
+}
+
+<h2>temas</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+   
+
+
+    @foreach (var item in Model.liste)
+    {
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"
+                       name="ipo[]"
+                       value="@item.idTema" /> @item.nombre
+                </label>
+            </div>
+        }
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</div>
+}

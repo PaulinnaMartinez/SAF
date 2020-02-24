@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body class=" pt-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger text-white">
+     
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form>  
+            <ul class="navbar-nav mr-auto">
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Grupo/Index">Mis grupos</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mi Perfil
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="~/Usuario/Details">Informacion</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="~/Usuario/Edit">Editar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="~/Home/Index">Cerrar sesion</a>
+                    </div>
+                </li>
+                
+            </ul>
+            
+                   
+            </form>
+        </div>
+    </nav>
+   
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+           
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.2.min.js"></script>
+    <script src="~/Assets/libs/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

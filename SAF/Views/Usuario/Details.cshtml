@@ -1,0 +1,80 @@
+﻿@model SAF.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Mi perfil</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.celular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.celular)
+        </dd>
+
+     
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modalidad)
+        </dt>
+
+        <dd>
+           
+            @if (Model.modalidad == "A")
+            {
+                <p>Maestro titulado</p>
+            }
+            else if (Model.modalidad == "B")
+            {
+                <p>Maestro no titulado</p>
+            }
+            else
+            {
+                <p>Solo alumno</p>
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  }) 
+   
+</p>
